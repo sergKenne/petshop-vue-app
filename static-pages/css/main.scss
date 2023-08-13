@@ -70,10 +70,57 @@ body {
   }
   &__logo-link {
     margin-right: 80px;
+    @media   (max-width: 769px) {
+      margin-right: 0;
+    }
   }
   &__logo {
     width: 152px;
     height: 42px;
+    @media   (max-width: 426px) {
+      width: 100px;
+    }
+  }
+  &__close-btn {
+    display: none;
+    cursor: pointer;
+    
+    @media   (max-width: 769px) {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #b62052;
+      margin-left: 204px;
+    }
+  }
+  &__close-icon {
+    width: 16px;
+    height: 16px;
+    fill: $white;
+  }
+  &__navbar {
+
+    @media   (max-width: 769px) {
+      position: absolute;
+      background-color: #ffffff;
+      top: 0;
+      //left: 0;
+      left: -240px;
+      height: 340px;
+      width: 240px;
+    }
+  }
+  &__nav {
+
+    @media   (max-width: 769px) {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 20px;
+      margin-left: 16px;
+    }
   }
   &__nav-item {
     color: #ffffff;
@@ -82,6 +129,9 @@ body {
     display: inline-block;
     //border: 1px solid red;
     position: relative;
+    @media   (max-width: 769px) {
+      color: $dark;
+    }
     &::after {
       content: "";
       display: block;
@@ -89,7 +139,6 @@ body {
       width: 0%;
       background: #ffffff;
       transition: width .2s linear;
-
     }
     &:hover::after  {
       width: 100%;
@@ -104,6 +153,9 @@ body {
     margin-left: 32px;
     cursor: pointer;
     position: relative;
+    @media   (max-width: 376px) {
+      margin-left: 20px;
+    }
     &--cart {
       display: flex;
       align-items: center;
@@ -111,6 +163,9 @@ body {
     }
     &--bar {
       display: none;
+      @media   (max-width: 769px) {
+        display: block;
+      }
     }
   }
   &__svg-icon {
@@ -201,14 +256,48 @@ body {
   background-color: $dark;
   color: $white;
   padding-top: 72px;
-  padding-bottom: 72px;
+  //padding-bottom: 72px;
   &__top {
     display: flex;
+    margin-bottom: 40px;
+    @media   (max-width: 769px) {
+      flex-direction: column;
+      gap: 40px;
+    }
   }
   &__item {
     width: 25%;
+    &:nth-child(1) {
+      @media   (max-width: 1025px) {
+        display: none;
+      }
+      @media   (max-width: 769px) {
+        display: block;
+        width: 100%;
+      }
+    }
     &:nth-child(2) {
       width: 50%;
+      @media   (max-width: 1025px) {
+        width: 60%;
+      }
+      @media   (max-width: 769px) {
+        width: 100%;
+      }
+    }
+    &:nth-child(3) {
+      @media   (max-width: 1025px) {
+        width: 40%;
+      }
+      @media   (max-width: 769px) {
+        width: 100%;
+      }
+    }
+
+  }
+  &__list-item {
+    @media   (max-width: 426px) {
+      width: 33.333%;
     }
   }
   &__title {
@@ -222,6 +311,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media   (max-width: 769px) {
+      justify-content: flex-start;
+      gap: 40px;
+    }
   }
   &__desc-item {
     display: flex;
@@ -242,12 +335,22 @@ body {
     justify-content: space-between;
     padding-left: 64px;
     padding-right: 64px;
+    @media   (max-width: 1025px) {
+      padding-left: 0;
+      //padding-right: 40px;
+    }
+    @media   (max-width: 769px) {
+      padding-right: 0;
+    }
 
   }
   &__list-title {
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 16px;
+    @media   (max-width: 426px) {
+      font-size: 14px;
+    }
   }
   &__list-link {
     font-size: 15px;
@@ -255,6 +358,12 @@ body {
     font-weight: 400;
     display: block;
     margin-bottom: 4px;
+    @media   (max-width: 426px) {
+      font-size: 13px;
+    }
+    &:hover {
+      color: #778997;
+    }
   }
   &__logo {
     width: 118px;
@@ -319,27 +428,45 @@ body {
   &__bottom {
     border-top: 1px solid #5a5858;
     padding-top: 40px;
+    padding-bottom: 50px;
     background-color: #0f2e4f;
-    margin-top: 72px;
-
-
   }
   &__bottom-inner {
     display: flex;
     justify-content: space-between;
     font-size: 14px;
     font-weight: 600;
+    //flex-wrap: wrap;
+    @media   (max-width: 965px) {
+      flex-direction: column;
+      gap: 30px;
+    }
+    
   }
   &__bottom-item {
     display: flex;
     align-items: center;
+    @media   (max-width: 620px) {
+      flex-direction: column;
+      gap: 10px;
+    }
   }
   &__payments-img {
     margin-left: 60px;
+    @media   (max-width: 620px) {
+      margin-left: 0;
+    }
+    @media (max-width: 426px) {
+      display: block;
+      max-width: 100%;
+    }
   }
   &__social-list {
     display: flex;
     margin-left: 50px;
+    @media   (max-width: 620px) {
+      margin-left: 0;
+    }
 
   }
   &__social-link {
