@@ -1,5 +1,5 @@
 <template>
-  <button class="btn" :style="{color, fontSize: size, fontWeight}">
+  <button class="btn" :style="{color, fontSize: size, fontWeight, background:bgColor}">
     <slot></slot>
   </button>
 </template>
@@ -7,13 +7,13 @@
 <script>
   export default {
     props: {
-      // bgColor: {
-      //   type: String,
-      //   default: "#b62052"
-      // },
-      color: {
+      bgColor: {
         type: String,
         default: "#ffffff"
+      },
+      color: {
+        type: String,
+        default: "#08284a"
       },
       size: {
         type: String,
@@ -40,7 +40,8 @@
     background-color: #b62052;
     transition: all .2s ease-in-out;
     &:hover {
-        background-color: #08284a;
-      }
+      background-color: #08284a!important;
+      color: #ffffff!important;
+    }
   }
 </style>

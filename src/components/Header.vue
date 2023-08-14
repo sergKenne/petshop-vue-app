@@ -4,15 +4,17 @@
           <a href="/" class="header__logo-link">
             <img src="img/logo.svg" class="header__logo" alt="">
           </a>
-          <div class="header__navbar">
-            <div class="header__close-btn">
-              <svg class="header__close-icon"><use xlink:href="sprite.svg#close"></use></svg>
+          <div class="header__navbar" :class="{hide: !show }">
+            <div class="header__navbar-content" @click="closeSidebar">
+              <div class="header__close-btn">
+                <svg class="header__close-icon"><use xlink:href="sprite.svg#close"></use></svg>
+              </div>
+              <nav class="header__nav">
+                <router-link to="/" class="header__nav-item">Home</router-link>
+                <router-link to="/shop" class="header__nav-item">Shop</router-link>
+                <router-link to="/blog" class="header__nav-item">Blog</router-link>
+              </nav>
             </div>
-            <nav class="header__nav">
-              <router-link to="/" class="header__nav-item">Home</router-link>
-              <router-link to="/shop" class="header__nav-item">Shop</router-link>
-              <router-link to="/blog" class="header__nav-item">Blog</router-link>
-            </nav>
           </div>
           <div class="header__right-icons">
             <div class="header__icon">
@@ -64,7 +66,7 @@
                 </div>
               </div>
             </div>
-            <div class="header__icon header__icon--bar">
+            <div class="header__icon header__icon--bar" @click="openSidebar">
               <svg class="header__svg-icon"><use xlink:href="sprite.svg#bar"></use></svg>
             </div>
           </div>
@@ -74,7 +76,20 @@
 
 <script>
   export default {
-    
+    data: () => {
+      return {
+        show: false,
+        message: "Welcome"
+      }
+    },
+    methods: {
+      openSidebar()  {
+        this.show = true
+      },
+      closeSidebar() {
+        this.show = false
+      }
+    }
   }
 </script>
 
