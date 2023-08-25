@@ -23,14 +23,14 @@
                 <span class="header__badge">12</span>
               </div>
             </div>
-            <div class="header__icon header__icon--cart">
+            <div class="header__icon header__icon--cart" @click="toggleDropdown">
               <div class="header__cart">
                 <svg class="header__svg-icon"><use xlink:href="sprite.svg#cart"></use></svg>
                 <span class="header__badge">16</span>
               </div>
               <span>Cart</span> 
-              <svg class="header__svg-icon header__svg-icon--down"><use xlink:href="sprite.svg#array-down"></use></svg>
-              <div class="header__dropdown">
+              <svg class="header__svg-icon header__svg-icon--down"><use xlink:href="sprite.svg#array"></use></svg>
+              <div class="header__dropdown" :class="{show: isDown}">
                 <div class="header__dropdown-inner">
                   <div class="header__card">
                     <img class="header__card-img" src="img/product32.jpg" alt="">
@@ -79,7 +79,8 @@
     data: () => {
       return {
         show: false,
-        message: "Welcome"
+        isDown: false
+        
       }
     },
     methods: {
@@ -88,7 +89,11 @@
       },
       closeSidebar() {
         this.show = false
+      },
+      toggleDropdown() {
+        this.isDown = !this.isDown
       }
+
     }
   }
 </script>
